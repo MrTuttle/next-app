@@ -1,3 +1,5 @@
+import SortUsers from "./SortUsers";
+
 // app/users/UserTable.tsx
 interface User {
   name: string;
@@ -8,12 +10,13 @@ interface User {
 const UserTable = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const users: User[] = await res.json();
+
   return (
     <>
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th> Name</th>
+            <SortUsers label="Name" />
             <th>Email</th>
           </tr>
         </thead>
