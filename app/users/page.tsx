@@ -2,11 +2,22 @@
 
 import UserTable from "./UserTable";
 
-const UsersPage = () => {
+interface Props {
+  searchParams: {
+    sortOrder: string;
+  };
+}
+
+const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
+  console.log(sortOrder);
+  // log return "email" or "name"
+
   return (
     <>
-      <div>UsersPage</div>
-      <UserTable />
+      <div>
+        <h1>UsersPage</h1>
+      </div>
+      <UserTable sortOrder={sortOrder} />
     </>
   );
 };
