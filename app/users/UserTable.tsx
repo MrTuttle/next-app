@@ -1,3 +1,5 @@
+import SortUsers from "./SortUsers";
+
 // app/users/UserTable.tsx
 
 import Link from "next/link";
@@ -32,6 +34,8 @@ const UserTable = async ({ sortOrder }: Props) => {
             <th>
               <Link href="/users?sortOrder=email">Email</Link>
             </th>
+            <SortUsers label="Name" />
+            <th>Email</th>
           </tr>
         </thead>
         <tbody>
