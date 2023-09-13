@@ -1,6 +1,8 @@
 // app / users / page.tsx;
 
+import Link from "next/link";
 import UserTable from "./UserTable";
+import { Suspense } from "react";
 
 interface Props {
   searchParams: {
@@ -14,10 +16,13 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
 
   return (
     <>
-      <div>
-        <h1>UsersPage</h1>
-      </div>
-      <UserTable sortOrder={sortOrder} />
+      <h1>Users Page</h1>
+      <Link href="/users/new" className="btn ">
+        New user
+      </Link>
+      <Suspense fallback={<p>Loading...</p>}>
+        <UserTable sortOrder={sortOrder} />
+      </Suspense>
     </>
   );
 };
