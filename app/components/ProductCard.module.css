@@ -1,5 +1,5 @@
 /* app/components/ProductCard.module.css */
 .card {
   padding: 1rem;
-  border: 1px solid red;
+  border: 1px solid #333;
 }

@@ -25,7 +25,7 @@ const UserTable = async ({ sortOrder }: Props) => {
 
   return (
     <>
-      <table className="table table-bordered">
+      <table className="table table-bordered border-slate-300">
         <thead>
           <tr>
             <th>
@@ -38,7 +38,7 @@ const UserTable = async ({ sortOrder }: Props) => {
             <th>Email</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-slate-800 dark:text-slate-400">
           {/* on ne mappe plus Users mais sortedUsers */}
           {sortedUsers.map((user) => (
             <tr key={user.id}>
