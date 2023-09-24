@@ -2,12 +2,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import schema from "./schema";
 import prisma from "@/prisma/client";
+import { string } from "zod";
 
-export async function GET(request: NextRequest) {
+interface Props {
+  params: { id: number };
+}
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
   const users = prisma.user.findMany({
     // where: {email: ''} look at documentation, many conditions are possibles here
+    where: { id: parseInt(params.id) },
   });
-  return NextResponse.json(users);
+  if (!users)
+    return NextResponse.json({ error: "User not found" }, { status: 404 });
+  return NextResponse.json({ users });
 }
 
 export async function POST(request: NextRequest) {
