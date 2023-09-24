@@ -45,7 +45,7 @@ export default function Draft() {
           />
 
           <input
-            // disabled={!name || !email}
+            disabled={!name || !email}
             type="submit"
             value="Create"
             className="btn btn-primary mr-2"
