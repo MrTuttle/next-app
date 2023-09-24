@@ -34,14 +34,14 @@ export default function Draft() {
             placeholder="name"
             type="text"
             value={name}
-            className="p-2 bg-slate-100 rounded-lg mr-4"
+            className="p-2 bg-slate-100 rounded-lg mr-4 border-none transition duration-200 ease-[cubic-bezier(0,0,0.2,1)] focus:scale-110 focus:outline-none"
           />
           <input
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Author (email address)"
             type="text"
             value={email}
-            className="p-2 bg-slate-100 rounded-lg mr-4"
+            className="p-2 bg-slate-100 rounded-lg mr-4 border-none transition duration-200 ease-[cubic-bezier(0,0,0.2,1)] focus:scale-110 focus:outline-none"
           />
 
           <input
