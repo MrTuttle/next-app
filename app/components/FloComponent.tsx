@@ -1,32 +1,60 @@
-import React from "react";
-import { NextRequest, NextResponse } from "next/server";
-import schema from "../api/users/schema";
-import prisma from "@/prisma/client";
-import { Http2ServerRequest } from "http2";
-import { json } from "node:stream/consumers";
-import { promise } from "zod";
-import { PrismaClient } from "@prisma/client";
+"use client";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
-const getUsers = async function getStaticProps() {
-  const prisma = new PrismaClient();
-  const users = await prisma.user.findMany();
-  return { users: { users } };
-};
-console.log(`LOOG :${getUsers}`);
+export default function Draft() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const router = useRouter();
 
-const FloComponent = () => {
+  const submitData = async (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    try {
+      const body = { name, email };
+      await fetch(`/api/users`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      router.push("/");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <div>
-        <h1>FloComponent </h1>
-        {/* {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
-        ))} */}
-        <p className="text-slate-800 dark:text-slate-200"></p>
-        <p></p>
+        <form onSubmit={submitData}>
+          <h1>Create User</h1>
+          <input
+            autoFocus
+            onChange={(e) => setName(e.target.value)}
+            placeholder="name"
+            type="text"
+            value={name}
+            className="p-2 bg-slate-100 rounded-lg mr-4"
+          />
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Author (email address)"
+            type="text"
+            value={email}
+            className="p-2 bg-slate-100 rounded-lg mr-4"
+          />
+
+          <input
+            // disabled={!name || !email}
+            type="submit"
+            value="Create"
+            className="btn btn-primary mr-2"
+          />
+          <a className="btn btn-secondary" href="/">
+            or Cancel
+          </a>
+        </form>
       </div>
     </>
   );
-};
-
-export default FloComponent;
+}
