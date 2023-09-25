@@ -1,3 +1,5 @@
+// app/api/products/route.tsx
+
 import { NextRequest, NextResponse } from "next/server";
 import schema from "./schema";
 
@@ -13,8 +15,9 @@ export async function POST(request: NextRequest) {
   const body = await request.json();
   // zod validation
   const validation = schema.safeParse(body);
+  // if validation is not successful :
   if (!validation.success)
-    return NextResponse.json(validation.error.errors), { status: 400 };
+    return NextResponse.json(validation.error.errors, { status: 400 });
 
   // return the object we are suposed to create
   return NextResponse.json(

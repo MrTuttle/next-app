@@ -2,31 +2,37 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function Draft() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+export default function DeleteUser() {
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  const [id, setId] = useState();
   const router = useRouter();
 
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
-      const body = { name, email };
+      const body = { id };
       await fetch(`/api/users`, {
-        method: "POST",
+        method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
-        cache: "no-store",
+        cache: "no-cache",
       });
 
       router.push("/");
     } catch (error) {
+      console.log("jjjjjjj");
+
       console.error(error);
     }
   };
 
   return (
     <>
-      <div>
+      <button onClick={submitData} id={id}>
+        Delete User
+      </button>
+      {/* <div>
         <form onSubmit={submitData}>
           <h1>Create User</h1>
           <input
@@ -55,7 +61,7 @@ export default function Draft() {
             or Cancel
           </a>
         </form>
-      </div>
+      </div> */}
     </>
   );
 }
