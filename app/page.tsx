@@ -15,7 +15,7 @@ export default function Home() {
       <UsersList></UsersList>
       <Link href="/users">Users</Link>
       <ProductCard />
-      <GetUser url="http://localhost:3000/api/users/5" />
+      {/* <GetUser url="http://localhost:3000/api/users/5" /> */}
       {/* <a href="/users">Users</a> */}
     </main>
   );

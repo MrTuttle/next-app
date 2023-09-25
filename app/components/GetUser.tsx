@@ -5,7 +5,13 @@ interface Props {
 }
 
 const GetUser = ({ url }: Props) => {
-  return <div>GetUser {url}</div>;
+  const userGet = GET("http://localhost:3000/api/users/5", "5");
+  return (
+    <div>
+      GetUser {url}
+      {userGet()}
+    </div>
+  );
 };
 
 export default GetUser;

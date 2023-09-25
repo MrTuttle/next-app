@@ -7,6 +7,7 @@ const NavBar = () => {
     { label: "Users", path: "/users" },
     { label: "Users api", path: "/api/users" },
     { label: "Products", path: "/products" },
+    { label: "Login", path: "/api/auth/signin" },
   ];
   return (
     <>
