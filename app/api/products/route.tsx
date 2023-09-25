@@ -2,7 +2,6 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import schema from "./schema";
-// import { Prisma } from "@/clientprisma/client";
 import prisma from "@/prisma/client";
 
 export async function GET(request: NextRequest) {
