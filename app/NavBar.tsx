@@ -1,3 +1,4 @@
+// app/navbar.tsx
 "use client";
 
 import Link from "next/link";
@@ -13,6 +14,7 @@ const NavBar = () => {
     { label: "Users", path: "/users" },
     { label: "Users api", path: "/api/users" },
     { label: "Products", path: "/products" },
+    { label: "Dashboard", path: "/dashboard" },
   ];
   return (
     <>
@@ -29,9 +31,18 @@ const NavBar = () => {
             </Link>
           ))}
           {status === "loading" && <div>... Loading</div>}
-          {status === "authenticated" && <div>{session.user!.name}</div>}
+          {status === "authenticated" && (
+            <div>
+              {session.user!.name}
+              <Link href="api/auth/signout" className="pl-5">
+                Sign out
+              </Link>
+            </div>
+          )}
           {status === "unauthenticated" && (
-            <Link href="api/auth/signin">Login</Link>
+            <Link href="api/auth/signin" className="pl-5">
+              Login
+            </Link>
           )}
         </div>
       </div>
