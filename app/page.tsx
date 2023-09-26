@@ -14,9 +14,9 @@ export default async function Home() {
   return (
     <main>
       <h1>Hello {session && <span>{session.user!.name}</span>}</h1>
-      <FloComponent></FloComponent>
+      {/* <FloComponent></FloComponent>
       <UsersList></UsersList>
-      <Link href="/users">Users</Link>
+      <Link href="/users">Users</Link> */}
       <ProductCard />
       {/* <GetUser url="http://localhost:3000/api/users/5" /> */}
       {/* <a href="/users">Users</a> */}
