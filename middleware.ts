@@ -6,5 +6,5 @@ export const config = {
   // * : zero or more parameter after /users/
   // + : one or more
   // ? : zero or one
-  matcher: ["/dashboard/:id+"],
+  matcher: ["/dashboard/:path+"],
 };
