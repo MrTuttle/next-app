@@ -59,8 +59,8 @@ export default async function Home() {
       <div className="mt-10">
         <h1>Flo component</h1>
         <FloComponent></FloComponent>
-        {/* <UsersList></UsersList> */}
-        {/* <Link href="/users">Users</Link> */}
+        <UsersList></UsersList>
+        <Link href="/users">Users</Link>
         <ProductCard />
         {/* <GetUser url="http://localhost:3000/api/users/5" /> */}
         {/* <a href="/users">Users</a> */}

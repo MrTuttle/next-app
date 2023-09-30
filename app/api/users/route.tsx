@@ -14,7 +14,7 @@ export async function GET(
 ) {
   const users = prisma.user.findMany({
     // where: {email: ''} look at documentation, many conditions are possibles here
-    where: { id: parseInt(params.id) },
+    where: { id: params.id },
   });
   if (!users)
     return NextResponse.json({ error: "User not found" }, { status: 404 });
