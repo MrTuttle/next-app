@@ -20,7 +20,7 @@ interface PropsDelete {
 
 export default async function UserList() {
   const feed = await prisma.user.findMany({
-    where: { isActive: true },
+    where: { name: { not: null } },
   });
   const onDelete = () => {
     console.log("loog onDelete");
@@ -46,9 +46,7 @@ export default async function UserList() {
             <tr key={user.id}>
               <td>{user.name}</td>
               <td>{user.email}</td>
-              <td>
-                <BtnDeleteUser id={user.id}></BtnDeleteUser>
-              </td>
+              <td>{/* <BtnDeleteUser id={user.id}></BtnDeleteUser> */}</td>
             </tr>
           ))}
         </tbody>

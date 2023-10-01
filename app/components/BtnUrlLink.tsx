@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import route from "@/app/api/users/route";
+// import route from "@/app/api/users/route";
 
 interface Props {
   label: string;
