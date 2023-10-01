@@ -69,7 +69,7 @@ export default async function Home() {
       </div>
       <div className="mt-10">
         <h1>Flo component</h1>
-        <p>Code to uncomment when we'll have mysql in cloud</p>
+        <p>Code to uncomment when we&rsquo; ll have mysql in cloud</p>
         {/* <FloComponent></FloComponent>
         <UsersList></UsersList> */}
         <Link href="/users">Users</Link>
