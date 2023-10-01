@@ -110,19 +110,6 @@ export default async function Home() {
           priority // boolean, set priority to images above the fold
         />
       </div>
-
-      <div className="relative h-screen">
-        <Image
-          src="https://bit.ly/react-cover"
-          alt="logo react"
-          fill
-          className="object-cover"
-          sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-          // 480px = standart mobiles, 768 = standard tablets, 33vw other width devices -> seem not working on dev tools, see in real mobile device
-          quality="100" // default = 75 percent
-          priority // boolean, set priority to images above the fold
-        />
-      </div>
     </main>
   );
 }
