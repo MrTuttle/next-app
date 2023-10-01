@@ -19,35 +19,38 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
   return (
     <>
       <h1>Users Page</h1>
+      <div className="relative">
+        <div
+          style={{
+            border: "1px solid white",
+            position: "fixed",
+            mixBlendMode: "difference",
+            color: "white",
+            zIndex: 200,
+          }}
+          className="bloc relative m-10 flex"
+        >
+          <p
+            style={{ border: "1px solid white", padding: "0.5rem" }}
+            className=" bloc text-9x font-bold"
+          >
+            M D M A : <span className="font-light">artisan ébèniste</span>
+          </p>
+          <p
+            style={{ border: "1px solid white", padding: "0.5rem" }}
+            className="bloc text-9x font-bold"
+          >
+            <span className="font-light">Option | option </span>
+          </p>
+        </div>
+      </div>
       <Link href="/users/new" className="btn ">
         New user
       </Link>
       <Suspense fallback={<p>Loading...</p>}>
         <UserTable sortOrder={sortOrder} />
       </Suspense>
-      <div
-        style={{
-          border: "1px solid white",
-          position: "fixed",
-          mixBlendMode: "difference",
-          color: "white",
-          zIndex: 200,
-        }}
-        className="bloc relative m-10 flex"
-      >
-        <p
-          style={{ border: "1px solid white", padding: "0.5rem" }}
-          className=" bloc text-9x font-bold"
-        >
-          M D M A : <span className="font-light">artisan ébèniste</span>
-        </p>
-        <p
-          style={{ border: "1px solid white", padding: "0.5rem" }}
-          className="bloc text-9x font-bold"
-        >
-          <span className="font-light">Option | option </span>
-        </p>
-      </div>
+
       <div className="relative h-screen">
         <Image
           src={portrait}
