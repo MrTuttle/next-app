@@ -5,7 +5,6 @@ import Link from "next/link";
 import ProductCard from "./components/ProductCard";
 import FloComponent from "./components/FloComponent";
 import UsersList from "./components/UsersList";
-import GetUser from "./components/GetUser";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 import portrait from "@/public/images/16.jpg";
@@ -56,14 +55,24 @@ export default async function Home() {
           priority
         />
       </div>
+      <div className="relative h-screen">
+        <Image
+          src={portrait}
+          alt="portrait"
+          fill
+          className="object-cover"
+          sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+          // 480px = standart mobiles, 768 = standard tablets, 33vw other width devices -> seem not working on dev tools, see in real mobile device
+          quality="100" // default = 75 percent
+          priority // boolean, set priority to images above the fold
+        />
+      </div>
       <div className="mt-10">
         <h1>Flo component</h1>
         <FloComponent></FloComponent>
         <UsersList></UsersList>
         <Link href="/users">Users</Link>
         <ProductCard />
-        {/* <GetUser url="http://localhost:3000/api/users/5" /> */}
-        {/* <a href="/users">Users</a> */}
       </div>
       <div
         style={{ border: "red 1px solid", width: "50%", margin: "200px" }}
