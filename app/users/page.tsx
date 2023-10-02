@@ -4,7 +4,12 @@ import Link from "next/link";
 import UserTable from "./UserTable";
 import { Suspense } from "react";
 import Image from "next/image";
-import portrait from "@/public/images/16.jpg";
+import portrait1 from "@/public/images/1.jpg";
+import portrait3 from "@/public/images/3.jpg";
+import portrait13 from "@/public/images/13.jpg";
+import portrait16 from "@/public/images/16.jpg";
+
+import Card from "../components/Card";
 
 interface Props {
   searchParams: {
@@ -53,7 +58,7 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
 
       <div className="relative h-screen">
         <Image
-          src={portrait}
+          src={portrait16}
           alt="portrait"
           fill
           className="object-cover"
@@ -63,6 +68,42 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
           priority // boolean, set priority to images above the fold
         />
       </div>
+      <Card
+        heading="category"
+        title="Incredible accommodation for your team"
+        summary="Looking to take your team away on a retreat to enjoy awesome food
+              and take in some sunshine? We have a list of places to do just
+              that."
+        link={"string"}
+        image={portrait1}
+      ></Card>
+      <Card
+        heading="category"
+        title="Incredible accommodation for your team"
+        summary="Looking to take your team away on a retreat to enjoy awesome food
+              and take in some sunshine? We have a list of places to do just
+              that."
+        link={"string"}
+        image={portrait3}
+      ></Card>
+      <Card
+        heading="category"
+        title="Incredible accommodation for your team"
+        summary="Looking to take your team away on a retreat to enjoy awesome food
+              and take in some sunshine? We have a list of places to do just
+              that."
+        link={"string"}
+        image={portrait13}
+      ></Card>
+      <Card
+        heading="category"
+        title="Incredible accommodation for your team"
+        summary="Looking to take your team away on a retreat to enjoy awesome food
+              and take in some sunshine? We have a list of places to do just
+              that."
+        link={"string"}
+        image={portrait16}
+      ></Card>
     </>
   );
 };
