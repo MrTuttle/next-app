@@ -75,7 +75,7 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
               and take in some sunshine? We have a list of places to do just
               that."
         link={"string"}
-        image={portrait1}
+        src={portrait1}
       ></Card>
       <Card
         heading="category"
@@ -84,7 +84,7 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
               and take in some sunshine? We have a list of places to do just
               that."
         link={"string"}
-        image={portrait3}
+        src={portrait3}
       ></Card>
       <Card
         heading="category"
@@ -93,7 +93,7 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
               and take in some sunshine? We have a list of places to do just
               that."
         link={"string"}
-        image={portrait13}
+        src={portrait13}
       ></Card>
       <Card
         heading="category"
@@ -102,7 +102,7 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
               and take in some sunshine? We have a list of places to do just
               that."
         link={"string"}
-        image={portrait16}
+        src={portrait16}
       ></Card>
     </>
   );

@@ -1,4 +1,4 @@
-import Image, { ImageProps } from "next/image";
+import Image, { ImageProps, StaticImageData } from "next/image";
 import React from "react";
 import { URL } from "url";
 // import portrait from "@/public/images/16.jpg";
@@ -8,7 +8,8 @@ interface Props {
   title: string;
   summary: string;
   link: string;
-  image: HTMLImageElement;
+  //image: HTMLImageElement;
+  src: string | StaticImageData;
 }
 
 const Card = (props: Props) => {
@@ -19,7 +20,7 @@ const Card = (props: Props) => {
           <div className="md:shrink-0">
             <Image
               className="h-48 w-full object-cover md:h-full md:w-48"
-              src={props.image}
+              src={props.src}
               width="200"
               height="200"
               alt="Modern building architecture"
