@@ -15,7 +15,7 @@ interface Props {
 const Card = (props: Props) => {
   return (
     <>
-      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-3.5">
+      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
         <div className="md:flex">
           <div className="md:shrink-0">
             <Image

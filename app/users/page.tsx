@@ -68,42 +68,44 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
           priority // boolean, set priority to images above the fold
         />
       </div>
-      <Card
-        heading="category"
-        title="Incredible accommodation for your team"
-        summary="Looking to take your team away on a retreat to enjoy awesome food
-              and take in some sunshine? We have a list of places to do just
-              that."
-        link={"string"}
-        src={portrait1}
-      ></Card>
-      <Card
-        heading="category"
-        title="Incredible accommodation for your team"
-        summary="Looking to take your team away on a retreat to enjoy awesome food
-              and take in some sunshine? We have a list of places to do just
-              that."
-        link={"string"}
-        src={portrait3}
-      ></Card>
-      <Card
-        heading="category"
-        title="Incredible accommodation for your team"
-        summary="Looking to take your team away on a retreat to enjoy awesome food
-              and take in some sunshine? We have a list of places to do just
-              that."
-        link={"string"}
-        src={portrait13}
-      ></Card>
-      <Card
-        heading="category"
-        title="Incredible accommodation for your team"
-        summary="Looking to take your team away on a retreat to enjoy awesome food
-              and take in some sunshine? We have a list of places to do just
-              that."
-        link={"string"}
-        src={portrait16}
-      ></Card>
+      <div className="lg:container lg:mx-auto 2xl:w-5/6 grid lg:grid-cols-2 2xl:grid-cols-3 gap-4 mt-8 xl:gap-5 xl:mt-10 lg:mt-12 2xl:mt-20">
+        <Card
+          heading="category"
+          title="Incredible accommodation for your team"
+          summary="Looking to take your team away on a retreat to enjoy awesome food
+        and take in some sunshine? We have a list of places to do just
+        that."
+          link={"string"}
+          src={portrait1}
+        ></Card>
+        <Card
+          heading="category"
+          title="Incredible accommodation for your team"
+          summary="Looking to take your team away on a retreat to enjoy awesome food
+        and take in some sunshine? We have a list of places to do just
+        that."
+          link={"string"}
+          src={portrait3}
+        ></Card>
+        <Card
+          heading="category"
+          title="Incredible accommodation for your team"
+          summary="Looking to take your team away on a retreat to enjoy awesome food
+        and take in some sunshine? We have a list of places to do just
+        that."
+          link={"string"}
+          src={portrait13}
+        ></Card>
+        <Card
+          heading="category"
+          title="Incredible accommodation for your team"
+          summary="Looking to take your team away on a retreat to enjoy awesome food
+        and take in some sunshine? We have a list of places to do just
+        that."
+          link={"string"}
+          src={portrait16}
+        ></Card>
+      </div>
     </>
   );
 };
