@@ -1,30 +1,22 @@
 // app / users / page.tsx;
 
 import Link from "next/link";
-import UserTable from "./UserTable";
 import { Suspense } from "react";
 import Image from "next/image";
-import portrait1 from "@/public/images/1.jpg";
-import portrait3 from "@/public/images/3.jpg";
-import portrait13 from "@/public/images/13.jpg";
-import portrait16 from "@/public/images/16.jpg";
+import maison from "@/public/images/bardage-bois.jpg";
+import piscine from "@/public/images/piscine-bardage.jpg";
+import piscine2 from "@/public/images/piscine-mickael.jpg";
+import piscine3 from "@/public/images/piscine-saone.jpg";
 
 import Card from "../components/Card";
 
-interface Props {
-  searchParams: {
-    sortOrder: string;
-  };
-}
-
-const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
+const madma = ({ searchParams: { sortOrder } }: Props) => {
   console.log(sortOrder);
   // log return "email" or "name"
 
   return (
     <>
       <main>
-        <h1>Users Page</h1>
         <div className="relative">
           <div
             style={{
@@ -34,7 +26,7 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
               color: "white",
               zIndex: 200,
             }}
-            className="bloc relative m-10 flex"
+            className="bloc relative m-5 flex"
           >
             <p
               style={{ border: "1px solid white", padding: "0.5rem" }}
@@ -50,16 +42,11 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
             </p>
           </div>
         </div>
-        <Link href="/users/new" className="btn ">
-          New user
-        </Link>
-        <Suspense fallback={<p>Loading...</p>}>
-          <UserTable sortOrder={sortOrder} />
-        </Suspense>
+
         <div className="">
           <div className="h-screen relative">
             <Image
-              src={portrait16}
+              src={maison}
               alt="portrait"
               fill
               className="object-cover"
@@ -78,7 +65,7 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
           and take in some sunshine? We have a list of places to do just
           that."
             link={"string"}
-            src={portrait1}
+            src={piscine}
           ></Card>
           <Card
             heading="category"
@@ -87,7 +74,7 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
           and take in some sunshine? We have a list of places to do just
           that."
             link={"string"}
-            src={portrait3}
+            src={piscine2}
           ></Card>
           <Card
             heading="category"
@@ -96,7 +83,7 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
           and take in some sunshine? We have a list of places to do just
           that."
             link={"string"}
-            src={portrait13}
+            src={piscine3}
           ></Card>
           <Card
             heading="category"
@@ -105,7 +92,7 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
           and take in some sunshine? We have a list of places to do just
           that."
             link={"string"}
-            src={portrait16}
+            src={maison}
           ></Card>
         </div>
       </main>
@@ -113,4 +100,4 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
   );
 };
 
-export default UsersPage;
+export default madma;
