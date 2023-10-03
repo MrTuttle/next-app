@@ -46,7 +46,9 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
               style={{ border: "1px solid white", padding: "0.5rem" }}
               className="bloc text-9x font-bold"
             >
-              <span className="font-light">Option | option </span>
+              <span className="font-light">
+                Option | <Link href="/mdma">option</Link>
+              </span>
             </p>
           </div>
         </div>

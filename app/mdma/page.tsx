@@ -1,7 +1,6 @@
 // app / users / page.tsx;
 
 import Link from "next/link";
-import { Suspense } from "react";
 import Image from "next/image";
 import maison from "@/public/images/bardage-bois.jpg";
 import piscine from "@/public/images/piscine-bardage.jpg";
@@ -10,10 +9,7 @@ import piscine3 from "@/public/images/piscine-saone.jpg";
 
 import Card from "../components/Card";
 
-const madma = ({ searchParams: { sortOrder } }: Props) => {
-  console.log(sortOrder);
-  // log return "email" or "name"
-
+const madma = () => {
   return (
     <>
       <main>
