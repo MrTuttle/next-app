@@ -7,7 +7,7 @@ import portrait3 from "@/public/images/3.jpg";
 import portrait13 from "@/public/images/13.jpg";
 import "../components/ContainerImage.css";
 import ContainerImage from "../components/ContainerImage";
-// to touch css class properties
+import { LoremIpsum } from "../components/LoremIpsum";
 
 const loco = () => {
   return (
@@ -32,18 +32,7 @@ const loco = () => {
           <h1>loco</h1>
         </div>
         <div className="w-3/4 py-10 text-slate-500">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Praesentium deleniti dolore nemo aliquid quam! Amet, fugiat? Ducimus
-            facere labore aperiam adipisci, illo voluptatibus. Quae numquam
-            nostrum consequuntur eum rem nemo!
-          </p>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Praesentium deleniti dolore nemo aliquid quam! Amet, fugiat? Ducimus
-            facere labore aperiam adipisci, illo voluptatibus. Quae numquam
-            nostrum consequuntur eum rem nemo!
-          </p>
+          <LoremIpsum />
         </div>
       </section>
       <section>

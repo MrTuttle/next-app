@@ -1,7 +1,7 @@
 // import React from "react";
 import Image, { ImageProps, StaticImageData } from "next/image";
 import "./ContainerImage.css";
-import { motion, useScroll, useInView } from "framer-motion";
+import { motion, useScroll, useInView, useSpring } from "framer-motion";
 // to touch css class properties
 import { useRef, useEffect } from "react";
 interface Props {
@@ -12,6 +12,12 @@ interface Props {
 const ContainerImage = ({ src, alt }: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const { scrollYProgress } = useScroll();
+  const alonge = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   useEffect(() => {
     console.log(`Element is in view: ${ref.current}`, isInView);
@@ -19,20 +25,24 @@ const ContainerImage = ({ src, alt }: Props) => {
 
   const x = 8.7;
   const y = 8.7;
-  const w = 30;
+  const w = 400;
   const h = 33.2;
   const zoom = 0.5;
 
   return (
     <>
-      <div
+      <motion.div
         className="imgBloc"
+        initial={{ width: 0 }}
+        whileInView={{ width: 400 }}
+
+        // style={{ width: scrollYProgress }}
         // style={{ width: `${w}vw`, height: `${h}vh` }}
-        style={{
-          width: isInView ? 400 : 0,
-          height: `${h}`,
-          transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
-        }}
+        // style={{
+        //   width: isInView ? 400 : 0,
+        //   height: `${h}`,
+        //   transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
+        // }}
         // style={{
         //   width: `${w}vw`,
         //   height: `${h}vh`,
@@ -62,7 +72,7 @@ const ContainerImage = ({ src, alt }: Props) => {
           // sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
           // priority
         />
-      </div>
+      </motion.div>
     </>
   );
 };

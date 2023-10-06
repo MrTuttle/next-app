@@ -5,13 +5,23 @@ h1 {
 .imgBloc {
   display: flex;
   margin: 1rem 0;
-  /* border: 1px solid red; */
-  /* width: 27vw;
-  height: 33.2vh; */
   overflow: hidden;
+
+  /* show container */
+  /* border: 1px solid red; */
+
+  /* width and height depend screen size */
+  /* width: 27vw; */
+  /* height: 33.2vh; */
+
+
   align-items: center;
+
+  /**/
+  /* If we want centered image
   /* flex align-item -> preserve aspect ratio */
   /* justify-content: center; */
+
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 5.6, 0, 1);
 
 
@@ -21,6 +31,7 @@ h1 {
   max-width: none;
   width: 300px;
   height:auto;
+  /* transform-origin: 0%; */
   /* transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 5.6, 0, 1); */
 
 }
